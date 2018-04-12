@@ -7,7 +7,11 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1521892953314_1825';
 
   // add your config here
-  config.middleware = [];
+  // 中间件配置
+  config.middleware = ['midDemo'];
+  config.midDemo = {
+    midDemoOption: 'midDemoOption Value'
+  };
 
   return config;
 };
