@@ -3,7 +3,8 @@ module.exports = app => {
     return class HomeTwoController extends app.Controller {
         // implement
         async index() {
-            this.ctx.body = app.foo('123') + app.appExtendFunction('extendFcuntion');
+            this.ctx.body = app.foo('123') + '。' + app.appExtendFunction('extendFcuntion') + '。';
+            this.ctx.body += 'config.keys:' + app.config.keys + '。';
         }
     };
 };

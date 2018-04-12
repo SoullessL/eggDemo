@@ -10,6 +10,7 @@
   "devDependencies": {
     "autod": "^3.0.1",
     "autod-egg": "^1.0.0",
+    "cross-env": "^5.1.4",
     "egg-bin": "^4.3.7",
     "egg-ci": "^1.8.0",
     "egg-mock": "^3.14.0",
@@ -24,6 +25,7 @@
     "start": "egg-scripts start --daemon --title=egg-server-eggDemo",
     "stop": "egg-scripts stop --title=egg-server-eggDemo",
     "dev": "egg-bin dev",
+    "prod": "set cross-dev EGG_SERVER_ENV=prod && npm start",
     "debug": "egg-bin debug",
     "test": "npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",
