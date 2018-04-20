@@ -13,5 +13,14 @@ module.exports = appInfo => {
     midDemoOption: 'midDemoOption Value'
   };
 
+  config.security={
+    domainWhiteList: ['http://localhost:7001'],
+    csrf: {
+      enable: false,
+      headerName: 'x-csrf-token',
+      ignoreJSON: false,
+    }
+  }
+
   return config;
 };
