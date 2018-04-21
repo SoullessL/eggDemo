@@ -20,8 +20,14 @@ class HomeController extends Controller {
 
   async user() {
     this.ctx.logger.info("start userVal");
-    this.ctx.validate(createRule);
-    this.ctx.logger.info(this.ctx.request);
+    try {
+      this.ctx.validate(createRule);
+      this.ctx.logger.info(this.ctx.request.body);
+    } catch (err) {
+      this.ctx.logger.error(err.errors);
+      this.ctx.response.body = { success: false };
+      return;
+    }
   }
 }
 
