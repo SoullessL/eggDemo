@@ -1,10 +1,10 @@
-'use strict';
+"use strict";
 
-const Controller = require('egg').Controller;
+const Controller = require("egg").Controller;
 
 const createRule = {
   username: {
-    type: 'email',
+    type: "email"
   }
 };
 
@@ -21,7 +21,7 @@ class HomeController extends Controller {
   async user() {
     this.ctx.logger.info("start userVal");
     this.ctx.validate(createRule);
-    this.ctx.logger.info(this.ctx.body);
+    this.ctx.logger.info(this.ctx.request);
   }
 }
 
